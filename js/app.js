@@ -60,14 +60,11 @@ function Store(location, minCust, maxCust, avgSale) {
   };
 }
 
-
-
 // below are for render:
 Store.prototype.render = function () {
   this.calSalesNo(); //cal sales number and store result in this.salesNoByHrAr
-  
   let selectTable = document.querySelector('table');
-  let newHead = document.createElement('thead');
+  let newHead = document.createElement('tbody');
   let newTr = document.createElement('tr');
   let newTdName = document.createElement('td');
   newTdName.textContent = this.location;
