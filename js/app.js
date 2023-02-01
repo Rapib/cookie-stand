@@ -109,7 +109,18 @@ paris.render();
 let lima = new Store('Lima', 2, 16, 4.6);
 lima.render();
 
+// create store list
+let storeList = [seattle, tokyo, dubai,paris,lima];
 
+// pull
+let totalHr = 0;
+
+totalHr = storeList[0].salesNoByHrAr[0] + storeList[1].salesNoByHrAr[0];
+for (let k = 0;k < storeList.length;k++){
+  totalHr += storeList[k].salesNoByHrAr[0];
+  return totalHr;
+};
+console.log(totalHr);
 /*
 
 // let newTable = document.querySelector('table'); //located the table from CSS, so Store name can be listed under
