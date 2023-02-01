@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color:wheat;
+}
+table {
+  width: 900px;
+  margin: auto;
+}
+table, th, td, tr, tbody, thead, tfoot {
+  border: 2px;
+  border-style: solid;
+  color: black;
+  padding: 5px 5px;
+}
+
+th {
+  font-weight: bold;
+}
+h1 {
+  margin: 20px 20px;
+  text-align: center;
+  color: darkgreen;
+  font-size: 50px;
+  font-weight: bold;
+
+}
+/* td {
+color: black;
+} */
