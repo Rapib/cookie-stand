@@ -60,8 +60,6 @@ function Store(location, minCust, maxCust, avgSale) {
   };
 }
 
-
-
 // below are for render:
 Store.prototype.render = function () {
   this.calSalesNo(); //cal sales number and store result in this.salesNoByHrAr
