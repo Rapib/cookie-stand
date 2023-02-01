@@ -1,6 +1,6 @@
 'use strict';
 
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 
 // lab 7
 
@@ -112,15 +112,54 @@ lima.render();
 // create store list
 let storeList = [seattle, tokyo, dubai,paris,lima];
 
-// pull
-let totalHr = 0;
+// 1st col ans
+let totalSalesByHr = [];
 
-totalHr = storeList[0].salesNoByHrAr[0] + storeList[1].salesNoByHrAr[0];
-for (let k = 0;k < storeList.length;k++){
-  totalHr += storeList[k].salesNoByHrAr[0];
-  return totalHr;
-};
-console.log(totalHr);
+
+// render bottom row 
+function renderBottomRow() {
+  //count total sales
+  let totalFinalSales = 0;
+  for (let m =0; m <storeList.length; m++){
+    totalFinalSales += storeList[m].totalSale();
+  }
+  console.log(totalFinalSales);
+  // just countinig numbers
+  for(let j = 0; j < hours.length ; j++){
+    let totalHr = 0;
+    // count straight
+    for (let k = 0;k < storeList.length;k++){
+      totalHr += storeList[k].salesNoByHrAr[j];
+    }
+    totalSalesByHr.push(totalHr); //update the total for each no with an array `totalSalesByHr`
+    console.log(totalHr);
+  }
+  // creating table
+  let topTable = document.querySelector('table');
+  let bottomFoot = document.createElement('tfoot');
+  let bottomTr = document.createElement('tr');
+  let bottomTd = document.createElement('td');
+  bottomTd.textContent = 'Totals';
+  topTable.appendChild(bottomFoot);
+  bottomFoot.appendChild(bottomTr);
+  bottomTr.appendChild(bottomTd);
+  for (let i = 0; i < hours.length; i++) {
+    let topTh = document.createElement('td');
+    topTh.textContent = totalSalesByHr[i];
+    topTable.appendChild(bottomFoot);
+    bottomFoot.appendChild(bottomTr);
+    bottomTr.appendChild(topTh);
+  }
+  let topTh = document.createElement('td');
+  topTh.textContent = totalFinalSales;
+  topTable.appendChild(bottomFoot);
+  bottomFoot.appendChild(bottomTr);
+  bottomTr.appendChild(topTh);
+}
+
+renderBottomRow();
+
+
 /*
 
 // let newTable = document.querySelector('table'); //located the table from CSS, so Store name can be listed under

@@ -3,21 +3,29 @@
 }
 
 body {
-  background-color: salmon;
+  background-color:wheat;
 }
-
+table {
+  width: 900px;
+  margin: auto;
+}
 table, th, td, tr, tbody, thead, tfoot {
   border: 2px;
   border-style: solid;
   color: black;
-  padding: 2px 2px;
+  padding: 5px 5px;
 }
 
-tr {
+th {
   font-weight: bold;
 }
 h1 {
-  color: darkblue;
+  margin: 20px 20px;
+  text-align: center;
+  color: darkgreen;
+  font-size: 50px;
+  font-weight: bold;
+
 }
 /* td {
 color: black;
