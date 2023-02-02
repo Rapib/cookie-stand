@@ -15,14 +15,14 @@ table, th, td, tr, tbody, thead, tfoot {
   font-family: Arial, Helvetica, sans-serif;
   border: 2px;
   border-style: solid;
-  color: black;
+  color: rgb(1, 0, 28);
   padding: 5px 5px;
 }
 
 th {
   font-weight: bold;
-  color: white;
-  background-color: black;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 24, 63);
 }
 
 tfoot {
