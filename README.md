@@ -2,20 +2,18 @@
 
 ## Salmon Cookies
 
-A page that has random generated sales data and printed it on the page with JavaScript.
+- Used JavaScript to generate random sales data and printed out a table.
+
+- Created a layout and filled in with content.
 
 ### Author: Thomas
 
-### Links and Resources
 
-* [submission PR](http://xyz.com)
-* Any Links you used as reference
 
 ### Lighthouse Accessibility Report Score
 
-* Provide a screenshot of your score after running a Lighthouse Accessibility report.
+ ![Lighthouse](img/lh.png)
 
 ### Reflections and Comments
 
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+Created everything from the ground up except the images.
