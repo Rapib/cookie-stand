@@ -40,6 +40,21 @@
       </ul> -->
     </div>
     <br />
+    <!-- <h2>Add a new store!</h2> -->
+    <form id="storeForm">
+      <fieldset>
+        <legend>New Store Info</legend>
+        <label>Store Location:</label>
+        <input type="text" placeholder="eg. Los Angeles" name="formLoction" required>
+        <label>Min customers hourly customers:</label>
+        <input type="number" placeholder="eg. 20" name="formMinCust" required>
+        <label>Max customers hourly customers:</label>
+        <input type="number" placeholder="eg. 100" name="formMaxCust" required>
+        <label>Average cookies purchased per customer:</label>
+        <input type="number" step=".1" placeholder="eg. 5" name="formAvgSale" required>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
     <footer>
       <a href="index.html" alt="Home">Home Page</a>
     </footer>

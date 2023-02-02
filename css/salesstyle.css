@@ -43,7 +43,36 @@ display: block;
   /* margin: 50px 50px; */
   text-align: center;
   font-size: 30px;
+
 }
 /* td {
 color: black;
 } */
+
+form {
+
+  width: 500px;
+  margin: 50px auto;
+  border-style: solid;
+  border-color: rgb(124, 11, 7);
+  border-width: 5px;
+  padding: 10px;
+}
+
+fieldset {
+  border-style: dashed;
+  border-color: coral;
+  border-width: 2px;
+  margin: 15px;
+  /* width: 100%; */
+  padding: 20px;
+  /* margin-bottom: 1rem; */
+}
+legend {
+  color: darkred;
+  font-size: 30px;
+
+}
+label, input {
+  display: block;
+}
