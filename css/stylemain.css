@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+}
+
+body {
+  background-color:rgb(226, 216, 167);
+}
+nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header ul {
+  width: 1200px;
+  margin: auto;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content:  flex-start;
+  /* justify-content: center; */
+  /* justify-content: space-around; */
+
+}
+
+header ul li {
+  width: 20%;
+  
+}
+
+header ul li a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',arial, sans-serif;
+  color: cadetblue;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+h1 {
+  display: block;
+  font-family: 'Roboto', sans-serif, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 100px;
+  color: darkred;
+  width: 1200px;
+  margin: auto;
+
+}
+
+main {
+  display: flex;
+  width: 1200px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main img {
+  margin-bottom: 30px;
+}
+
+#family {
+  width: 650px;
+  height: 400px;
+  border: 3px;
+  border-style: solid;
+  border-color: rgb(184, 92, 11);
+}
+
+
+.picRow {
+  width: 280px ;
+  border: 3px;
+  border-style: solid;
+  border-color: rgb(184, 92, 11);
+}
+
+
+article {
+  width: 520px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+article section {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 520px;
+  height: 360px;
+  overflow: auto;
+  margin-bottom: 6px;
+  margin-top: 5px;
+  color: darkslategrey
+}
+
+article h2 {
+  font-family: 'Roboto', sans-serif, 'Times New Roman', Times, serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: brown;
+}
+
+/* #contact {
+  background-color: orangered;
+  color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+
+} */
+
+/* #contact:hover {
+  transition-duration: 350ms;
+  background-color: orange;
+  color: white;
+} */
+
+h3 {
+  font-family: 'Roboto', sans-serif, 'Times New Roman', Times, serif;
+  color: darkcyan;
+  font-weight: bold;
+}
+
+footer div p, ul li {
+  font-family: 'Times New Roman', Times, serif;
+  color: blueviolet;
+}
+
+footer {
+  height: 120px;
+  background-color: rgb(249, 236, 195);
+  text-align: center;
+}
+footer div{
+  display: inline-block;
+  text-align: center;
+  margin: 20px 80px;
+}

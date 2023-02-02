@@ -4,21 +4,31 @@
 
 body {
   background-color:wheat;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 table {
   width: 900px;
   margin: auto;
+  background-color: rgb(183, 206, 213);
 }
 table, th, td, tr, tbody, thead, tfoot {
+  font-family: Arial, Helvetica, sans-serif;
   border: 2px;
   border-style: solid;
-  color: black;
+  color: rgb(1, 0, 28);
   padding: 5px 5px;
 }
 
 th {
   font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 24, 63);
 }
+
+tfoot {
+  background-color: lightskyblue;
+}
+
 h1 {
   margin: 20px 20px;
   text-align: center;
@@ -26,6 +36,13 @@ h1 {
   font-size: 50px;
   font-weight: bold;
 
+}
+
+footer a {
+display: block;
+  /* margin: 50px 50px; */
+  text-align: center;
+  font-size: 30px;
 }
 /* td {
 color: black;

@@ -2,9 +2,9 @@
 
 ## Salmon Cookies
 
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+A page that has random generated sales data and printed it on the page with JavaScript.
 
-### Author: Student/Group Name
+### Author: Thomas
 
 ### Links and Resources
 

@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color:wheat;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: darkslategrey;
+
+}
+
+body head {
+  width: 1000px;
+  margin: auto;
+}
+
+/* body head img {
+  width: 600px;
+} */
+
+main {
+  width: 700px;
+  margin: auto;
+}
+
+#story{
+  display: inline-block;
+
+}
+
+#family {
+  display: inline-block;
+  width: 300px;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+}
+
+h1 {
+  display: block;
+  font-family: 'Roboto', sans-serif, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 100px;
+  color: darkred;
+
+}
+
+#sale {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  color: cornflowerblue;
+}
+
+footer {
+  text-align: center;
+}
+footer div{
+  display: inline-block;
+  text-align: center;
+  margin: 20px 80px;
+}
