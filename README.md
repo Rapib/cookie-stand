@@ -11,9 +11,12 @@
 
 
 ### Lighthouse Accessibility Report Score
-
+main page for lab 8b
  ![Lighthouse](img/lh.png)
 
+for lab 9
+ ![Lighthouse](img/lh2.png)
+ 
 ### Reflections and Comments
 
 Created everything from the ground up except the images.
