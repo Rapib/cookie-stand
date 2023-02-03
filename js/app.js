@@ -55,16 +55,16 @@ function Store(location, minCust, maxCust, avgSale) {
       // console.log(this.salesNoByHrAr[k]);
       total += this.salesNoByHrAr[k];
     }
-    console.log(total);
+    // console.log(total);
     return total;
   };
 }
+let newHead = document.createElement('tbody');
 
 // below are for render:
 Store.prototype.render = function () {
   this.calSalesNo(); //cal sales number and store result in this.salesNoByHrAr
   let selectTable = document.querySelector('table');
-  let newHead = document.createElement('tbody');
   let newTr = document.createElement('tr');
   let newTdName = document.createElement('td');
   newTdName.textContent = this.location;
@@ -80,16 +80,16 @@ Store.prototype.render = function () {
   }
   let newTd = document.createElement('td');
   newTd.textContent = this.totalSale();
-  newTr.appendChild(newTd);
   selectTable.appendChild(newHead);
   newHead.appendChild(newTr);
+  newTr.appendChild(newTd);
 };
 
 //create new store and test it
 let seattle = new Store('Seattle', 23, 65, 6.3);
-console.log(seattle);
+// console.log(seattle);
 // seattle.calSalesNo();
-console.log(seattle.salesNoByHrAr);
+// console.log(seattle.salesNoByHrAr);
 //render seattle
 seattle.render();
 
@@ -107,31 +107,36 @@ let lima = new Store('Lima', 2, 16, 4.6);
 lima.render();
 
 // create store list
-let storeList = [seattle, tokyo, dubai,paris,lima];
+let storeList = [seattle, tokyo, dubai, paris, lima];
 
 // 1st col ans
 let totalSalesByHr = [];
 
 
-// render bottom row 
+
+
+// render bottom row
 function renderBottomRow() {
+  // console.log('yuerefrgufgsdfhugdf');
   //count total sales
   let totalFinalSales = 0;
-  for (let m =0; m <storeList.length; m++){
+  console.log(storeList);
+  for (let m = 0; m < storeList.length; m++) {
     totalFinalSales += storeList[m].totalSale();
   }
   console.log(totalFinalSales);
   // just countinig numbers
-  for(let j = 0; j < hours.length ; j++){
+  for (let j = 0; j < hours.length; j++) {
     let totalHr = 0;
     // count straight
-    for (let k = 0;k < storeList.length;k++){
+    for (let k = 0; k < storeList.length; k++) {
       totalHr += storeList[k].salesNoByHrAr[j];
     }
     totalSalesByHr.push(totalHr); //update the total for each no with an array `totalSalesByHr`
+
     console.log(totalHr);
   }
-  // creating table
+  // creating table(newHead is the tbody)
   let topTable = document.querySelector('table');
   let bottomFoot = document.createElement('tfoot');
   let bottomTr = document.createElement('tr');
@@ -140,21 +145,75 @@ function renderBottomRow() {
   topTable.appendChild(bottomFoot);
   bottomFoot.appendChild(bottomTr);
   bottomTr.appendChild(bottomTd);
+
   for (let i = 0; i < hours.length; i++) {
-    let topTh = document.createElement('td');
-    topTh.textContent = totalSalesByHr[i];
+    let lotTD = document.createElement('td');
+    console.log(totalSalesByHr);
+    lotTD.textContent = totalSalesByHr[i];
     topTable.appendChild(bottomFoot);
     bottomFoot.appendChild(bottomTr);
-    bottomTr.appendChild(topTh);
+    bottomTr.appendChild(lotTD);
   }
-  let topTh = document.createElement('td');
-  topTh.textContent = totalFinalSales;
+  let lotTD = document.createElement('td');
+  lotTD.textContent = totalFinalSales;
   topTable.appendChild(bottomFoot);
   bottomFoot.appendChild(bottomTr);
-  bottomTr.appendChild(topTh);
+  bottomTr.appendChild(lotTD);
 }
 
 renderBottomRow();
+
+// add eventlistener, handler...
+// 1.get form from DOM
+let storeForm = document.getElementById('storeForm');
+
+// 3. create function for event listener
+
+// let newLocation;
+// let newMinCust;
+// let newMaxCust;
+// let newAvgSale;
+
+let newSubmitedStore = function (event) {
+
+  event.preventDefault();
+  totalSalesByHr = []; //has to empty array, otherwise everything we hit submit, totalSalesByHr will keep ADDING new numbers to array and keep selecting the original numbers, the last row wont update
+  document.querySelector('tfoot tr').remove(); //delete tfoot tr everytime hit submit, so no 2 tfoot will be render
+  //see what is happenning in event
+  console.log(event);
+  console.log(event.target.formLocation.value);
+  console.log(event.target.formMinCust.value);
+  console.log(event.target.formMaxCust.value);
+  console.log(event.target.formAvgSale.value);
+  // use the user input and create new variables
+  let newLocation = event.target.formLocation.value;
+  console.log(typeof newLocation);
+  let newMinCust = parseInt(event.target.formMinCust.value);
+  let newMaxCust = parseInt(event.target.formMaxCust.value);
+  let newAvgSale = parseInt(event.target.formAvgSale.value);
+  console.log(`new location ${newLocation}`);
+  console.log(`new newMinCust ${newMinCust}`);
+  //create a new store and render it. *aNewStore* name doesn't matter
+  let aNewStore = new Store(newLocation, newMinCust, newMaxCust, newAvgSale);
+  storeList.push(aNewStore);
+  aNewStore.render();
+  console.log(aNewStore.salesNoByHrAr);
+  console.log(totalSalesByHr);
+  renderBottomRow();
+};
+
+
+
+// 2.add event listener
+storeForm.addEventListener('submit', newSubmitedStore);
+
+
+
+
+
+
+
+
 
 
 /*
@@ -166,9 +225,9 @@ renderBottomRow();
 
 // print list
 // for (let j = 0; j < hours.length; j++) {
-//   let seattleLi = document.createElement('li');
-//   seattleLi.textContent = `${hours[j]}: ${this.salesNoByHrAr[j]} cookies`;
-//   seattleP.appendChild(seattleLi);
+  //   let seattleLi = document.createElement('li');
+  //   seattleLi.textContent = `${hours[j]}: ${this.salesNoByHrAr[j]} cookies`;
+  //   seattleP.appendChild(seattleLi);
 // }
 
 // let seattleLiTotal = document.createElement('li');
