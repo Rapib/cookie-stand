@@ -190,7 +190,7 @@ let newSubmitedStore = function (event) {
   console.log(typeof newLocation);
   let newMinCust = parseInt(event.target.formMinCust.value);
   let newMaxCust = parseInt(event.target.formMaxCust.value);
-  let newAvgSale = parseInt(event.target.formAvgSale.value);
+  let newAvgSale = parseFloat(event.target.formAvgSale.value);
   console.log(`new location ${newLocation}`);
   console.log(`new newMinCust ${newMinCust}`);
   //create a new store and render it. *aNewStore* name doesn't matter
