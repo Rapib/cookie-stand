@@ -3,7 +3,7 @@
 
 - Used JavaScript to generate random sales data and printed out a table.
 
-- Created a layout and filled in with content.
+- Created a layout and filled it in with content.
 
 ### Author: Thomas
 
