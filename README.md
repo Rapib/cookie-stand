@@ -1,5 +1,6 @@
-## Salmon Cookies
+# Salmon Cookies
 
+## Overview
 - Used JavaScript to generate random sales data and printed out a table.
 
 - Created a layout and filled it in with content.
